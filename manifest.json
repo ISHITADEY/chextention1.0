@@ -1,13 +1,15 @@
 {
-     "name":"Dey Pickup Lines",
-    "description": "Get a new pickup  line everyday",
+    "name":"Dad Jokes",
+    "description": "Exhaustive collection of dad jokes",
     "version": "0.0.1",
     "manifest_version": 3,
-    "host_permissions":["*://api.jcwyt.com/*"],
+    "host_permissions":["*://*.icanhazdadjoke.com/*"],
     "action":{
         "default_popup":"popup.html",
         "default_icon":"happy.png"
-    }
+    },
+    "icons": {
+      "150": "happy.png"
+    },
+    "permissions": ["activeTab"]
 }
-
-

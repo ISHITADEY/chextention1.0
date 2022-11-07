@@ -1,13 +1,16 @@
+const myLines = document.querySelector("#myLines");
+const button = document.querySelector("#button")
+
 const getJokes = async() =>{
 try {
     // const res = await fetch("https://api.chucknorris.io/jokes/random");
-    const res = await fetch("https://api.jcwyt.com/pickup",{ mode: 'no-cors'});
-    const data  = await res.json();
-    const myLines = document.querySelector("#myLines");
-    myLines.innerHTML  = data.value;
-     console.log("data",data);
+    // const data = await res.json();
+    const URI = "https://icanhazdadjoke.com/slack"
+    const data = await (await fetch(URI)).json()
+    const joke = await data.attachments[0].text
+    
+    myLines.innerText = joke;
 } catch(error){}
 };
-window.addEventListener("load",()=> {
-    getJokes();
-});
+getJokes();
+button.addEventListener("click", getJokes, { passive: true });
